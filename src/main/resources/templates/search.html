@@ -39,9 +39,16 @@
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
 
-    <div th:each="job : ${jobs}">
 
-    <table class="job-listing">
+
+    <div th:if="${jobs}">
+
+        <h3 th:text="${jobs.size()} + ' Result(s)'"></h3>
+
+
+        <div th:each="job : ${jobs}">
+
+        <table class="job-listing">
         <tbody>
             <tr th:each="column : ${job}">
                 <td th:text="${#strings.capitalizeWords(column.key)}"></td>
@@ -52,6 +59,9 @@
     </table>
 
 </div>
+
+    </div>
+
 
 </div>
 

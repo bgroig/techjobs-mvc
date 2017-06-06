@@ -36,6 +36,10 @@
         <input type="submit" value="Search" />
     </form>
 
+    <div th:if="${jobs}">
+
+        <h3 th:text="${jobs.size()} + ' Result(s)'"></h3>
+
     <div th:each="job : ${jobs}">
 
         <table class="job-listing">
@@ -50,6 +54,7 @@
 
     </div>
 
+    </div>
 
 </div>
 
